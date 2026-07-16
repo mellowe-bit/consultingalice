@@ -1,0 +1,1657 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Consulting Alice — Strategic HR Business Consulting</title>
+<meta name="description" content="Warm, practical HR guidance for leaders who care about their teams and their bottom line. From compliance to culture, Alice helps growing businesses build people strategies that actually work.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Source+Serif+4:ital,opsz,wght@0,8..60,400..700;1,8..60,400..700&family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+<style>
+/* ============================================
+   RESET & BASE
+   ============================================ */
+*, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+html {
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  text-rendering: optimizeLegibility;
+  scroll-behavior: smooth;
+  scroll-padding-top: 88px;
+}
+
+:root {
+  /* Colors — Corporate Navy Palette */
+  --white: #FFFFFF;
+  --surface: #F6F8FA;
+  --surface-2: #EEF2F6;
+  --ink: #0F1B28;
+  --ink-soft: #46586B;
+  --ink-faint: #7C8896;
+  --line: rgba(15, 27, 40, 0.09);
+  --navy: #0F3357;
+  --navy-hover: #164873;
+  --navy-active: #0B2740;
+  --navy-tint: #E8EEF5;
+  --navy-deep: #0B1F33;
+  --terracotta: #C0662B;
+  --terracotta-hover: #D07535;
+  --terracotta-active: #A85622;
+  --terracotta-tint: #F9EDE3;
+  --sage: #5F7350;
+  --sage-tint: #ECF1E8;
+
+  /* Typography */
+  --font-display: 'Source Serif 4', Georgia, serif;
+  --font-body: 'Inter', 'Helvetica Neue', Arial, sans-serif;
+
+  /* Type Scale */
+  --text-xs: clamp(0.75rem, 0.7rem + 0.25vw, 0.875rem);
+  --text-sm: clamp(0.875rem, 0.8rem + 0.35vw, 1rem);
+  --text-base: clamp(1rem, 0.95rem + 0.25vw, 1.125rem);
+  --text-lg: clamp(1.125rem, 1rem + 0.75vw, 1.4rem);
+  --text-xl: clamp(1.5rem, 1.2rem + 1.25vw, 2.1rem);
+  --text-2xl: clamp(1.9rem, 1.2rem + 2.4vw, 3rem);
+  --text-3xl: clamp(2.4rem, 1.1rem + 4.2vw, 4.4rem);
+
+  /* Spacing */
+  --space-1: 0.25rem;
+  --space-2: 0.5rem;
+  --space-3: 0.75rem;
+  --space-4: 1rem;
+  --space-5: 1.25rem;
+  --space-6: 1.5rem;
+  --space-8: 2rem;
+  --space-10: 2.5rem;
+  --space-12: 3rem;
+  --space-16: 4rem;
+  --space-20: 5rem;
+  --space-24: 6rem;
+  --space-32: 8rem;
+
+  /* Radius */
+  --radius-sm: 8px;
+  --radius-md: 12px;
+  --radius-lg: 16px;
+  --radius-xl: 24px;
+  --radius-full: 9999px;
+
+  /* Transitions */
+  --transition-interactive: 180ms cubic-bezier(0.16, 1, 0.3, 1);
+  --ease-out: cubic-bezier(0.16, 1, 0.3, 1);
+
+  /* Shadows */
+  --shadow-sm: 0 1px 3px rgba(15, 27, 40, 0.06);
+  --shadow-md: 0 10px 30px rgba(15, 27, 40, 0.08);
+  --shadow-lg: 0 25px 50px -12px rgba(15, 27, 40, 0.14);
+
+  /* Content widths */
+  --content-wide: 1200px;
+  --content-narrow: 760px;
+}
+
+body {
+  min-height: 100dvh;
+  line-height: 1.6;
+  font-family: var(--font-body);
+  font-size: var(--text-base);
+  color: var(--ink);
+  background-color: var(--white);
+  overflow-x: hidden;
+}
+
+img, picture, video, canvas, svg { display: block; max-width: 100%; height: auto; }
+ul[role='list'], ol[role='list'] { list-style: none; }
+input, button, textarea, select { font: inherit; color: inherit; }
+
+h1, h2, h3, h4, h5, h6 {
+  line-height: 1.15;
+  text-wrap: balance;
+  letter-spacing: -0.015em;
+}
+h1, h2 { font-family: var(--font-display); font-weight: 600; }
+h3, h4 { font-family: var(--font-body); font-weight: 700; }
+p, li, figcaption { text-wrap: pretty; max-width: 72ch; }
+
+a, button, [role='button'], input, textarea, select {
+  transition: color var(--transition-interactive),
+              background var(--transition-interactive),
+              border-color var(--transition-interactive),
+              box-shadow var(--transition-interactive),
+              transform var(--transition-interactive);
+}
+
+button { cursor: pointer; background: none; border: none; }
+
+::selection { background: rgba(15, 51, 87, 0.16); color: inherit; }
+:focus-visible { outline: 2px solid var(--navy); outline-offset: 3px; border-radius: var(--radius-sm); }
+
+@media (prefers-reduced-motion: reduce) {
+  *, *::before, *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+    scroll-behavior: auto !important;
+  }
+}
+
+.sr-only {
+  position: absolute; width: 1px; height: 1px; padding: 0; margin: -1px;
+  overflow: hidden; clip: rect(0,0,0,0); white-space: nowrap; border-width: 0;
+}
+
+/* ============================================
+   UTILITY
+   ============================================ */
+.container {
+  width: 100%;
+  max-width: var(--content-wide);
+  margin-inline: auto;
+  padding-inline: var(--space-6);
+}
+
+/* Pill badge (section eyebrow) */
+.badge {
+  display: inline-flex;
+  align-items: center;
+  gap: var(--space-2);
+  padding: var(--space-1) var(--space-4);
+  border: 1px solid var(--line);
+  border-radius: var(--radius-full);
+  background: rgba(246, 248, 250, 0.7);
+  font-size: var(--text-xs);
+  font-weight: 600;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  color: var(--ink-soft);
+  margin-bottom: var(--space-6);
+}
+.badge::before {
+  content: '';
+  width: 6px;
+  height: 6px;
+  border-radius: 50%;
+  background: var(--terracotta);
+}
+
+.section-head {
+  max-width: 640px;
+  margin-inline: auto;
+  text-align: center;
+  margin-bottom: var(--space-16);
+}
+.section-head h2 {
+  font-size: var(--text-2xl);
+  color: var(--ink);
+  margin-bottom: var(--space-5);
+}
+.section-head p {
+  color: var(--ink-soft);
+  font-size: var(--text-base);
+  margin-inline: auto;
+}
+
+/* Scroll Reveal */
+.reveal {
+  opacity: 0;
+  transform: translateY(24px);
+  transition: opacity 0.7s var(--ease-out), transform 0.7s var(--ease-out);
+}
+.reveal.visible {
+  opacity: 1;
+  transform: translateY(0);
+}
+.reveal-delay-1 { transition-delay: 0.08s; }
+.reveal-delay-2 { transition-delay: 0.16s; }
+.reveal-delay-3 { transition-delay: 0.24s; }
+.reveal-delay-4 { transition-delay: 0.32s; }
+.reveal-delay-5 { transition-delay: 0.40s; }
+.reveal-delay-6 { transition-delay: 0.48s; }
+.reveal-delay-7 { transition-delay: 0.56s; }
+.reveal-delay-8 { transition-delay: 0.64s; }
+
+/* ============================================
+   HEADER
+   ============================================ */
+.header {
+  position: sticky;
+  top: 0;
+  z-index: 1000;
+  background: rgba(255, 255, 255, 0.88);
+  backdrop-filter: blur(16px) saturate(1.4);
+  -webkit-backdrop-filter: blur(16px) saturate(1.4);
+  border-bottom: 1px solid var(--line);
+  transition: box-shadow 0.35s ease;
+}
+.header.scrolled { box-shadow: 0 8px 24px rgba(15, 27, 40, 0.06); }
+
+.header__inner {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: var(--space-6);
+  height: 72px;
+}
+.header__logo {
+  font-family: var(--font-display);
+  font-size: 1.35rem;
+  font-weight: 700;
+  color: var(--ink);
+  text-decoration: none;
+  white-space: nowrap;
+  letter-spacing: -0.01em;
+}
+.header__logo span { color: var(--terracotta); font-style: italic; }
+
+.header__nav {
+  display: flex;
+  align-items: center;
+  gap: var(--space-8);
+}
+.header__nav a {
+  font-size: var(--text-sm);
+  font-weight: 500;
+  color: var(--ink-soft);
+  text-decoration: none;
+}
+.header__nav a:hover { color: var(--navy); }
+
+.header__cta { flex-shrink: 0; }
+
+/* Mobile subnav — always-visible scrollable link bar */
+.subnav {
+  display: none;
+  border-top: 1px solid var(--line);
+}
+.subnav__inner {
+  display: flex;
+  overflow-x: auto;
+  scrollbar-width: none;
+  -webkit-overflow-scrolling: touch;
+  gap: var(--space-2);
+  padding-block: var(--space-2);
+}
+.subnav__inner::-webkit-scrollbar { display: none; }
+.subnav__inner a {
+  flex-shrink: 0;
+  padding: var(--space-2) var(--space-4);
+  font-size: var(--text-xs);
+  font-weight: 600;
+  color: var(--ink-soft);
+  text-decoration: none;
+  border-radius: var(--radius-full);
+  border: 1px solid transparent;
+}
+.subnav__inner a:hover { color: var(--navy); background: var(--navy-tint); }
+
+@media (max-width: 960px) {
+  .header__nav { display: none; }
+  .subnav { display: block; }
+}
+@media (max-width: 480px) {
+  .header__cta .btn { padding: var(--space-2) var(--space-4); font-size: var(--text-xs); }
+}
+
+/* ============================================
+   BUTTONS
+   ============================================ */
+.btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: var(--space-2);
+  padding: var(--space-3) var(--space-8);
+  border-radius: var(--radius-sm);
+  font-size: var(--text-sm);
+  font-weight: 600;
+  text-decoration: none;
+  cursor: pointer;
+  border: none;
+  white-space: nowrap;
+}
+.btn--primary {
+  background: var(--navy);
+  color: white;
+  box-shadow: 0 1px 2px rgba(15, 27, 40, 0.2), inset 0 1px 0 rgba(255,255,255,0.08);
+}
+.btn--primary:hover { background: var(--navy-hover); transform: translateY(-1px); box-shadow: 0 8px 20px rgba(15, 51, 87, 0.25); }
+.btn--primary:active { background: var(--navy-active); transform: translateY(0); }
+
+.btn--outline {
+  background: var(--white);
+  color: var(--ink);
+  border: 1px solid rgba(15, 27, 40, 0.18);
+}
+.btn--outline:hover { border-color: var(--navy); color: var(--navy); transform: translateY(-1px); box-shadow: var(--shadow-sm); }
+.btn--outline:active { transform: translateY(0); }
+
+.btn--white {
+  background: white;
+  color: var(--navy);
+}
+.btn--white:hover { transform: translateY(-1px); box-shadow: 0 10px 26px rgba(0,0,0,0.22); }
+
+.btn--accent {
+  background: var(--terracotta);
+  color: white;
+  box-shadow: 0 1px 2px rgba(15, 27, 40, 0.2), inset 0 1px 0 rgba(255,255,255,0.12);
+}
+.btn--accent:hover { background: var(--terracotta-hover); transform: translateY(-1px); box-shadow: 0 10px 24px rgba(192, 102, 43, 0.35); }
+.btn--accent:active { background: var(--terracotta-active); transform: translateY(0); }
+
+/* ============================================
+   HERO
+   ============================================ */
+.hero {
+  position: relative;
+  padding: clamp(var(--space-16), 8vw, var(--space-24)) 0 clamp(var(--space-16), 7vw, var(--space-24));
+  background:
+    radial-gradient(ellipse 60% 45% at 50% -5%, rgba(15, 51, 87, 0.07), transparent),
+    radial-gradient(ellipse 45% 35% at 85% 70%, rgba(192, 102, 43, 0.06), transparent),
+    var(--white);
+  overflow: hidden;
+  text-align: center;
+}
+.hero::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background-image: radial-gradient(rgba(15, 27, 40, 0.055) 1px, transparent 1px);
+  background-size: 28px 28px;
+  mask-image: radial-gradient(ellipse at 50% 0%, black 0%, transparent 62%);
+  -webkit-mask-image: radial-gradient(ellipse at 50% 0%, black 0%, transparent 62%);
+  pointer-events: none;
+}
+.hero__content {
+  position: relative;
+  z-index: 1;
+  max-width: 880px;
+  margin-inline: auto;
+}
+.hero h1 {
+  font-size: var(--text-3xl);
+  color: var(--ink);
+  margin-bottom: var(--space-6);
+  line-height: 1.08;
+}
+.hero h1 em {
+  color: var(--terracotta);
+  font-style: italic;
+}
+.hero__subtitle {
+  font-size: var(--text-lg);
+  color: var(--ink-soft);
+  line-height: 1.65;
+  margin-bottom: var(--space-10);
+  max-width: 620px;
+  margin-inline: auto;
+}
+.hero__buttons {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: var(--space-4);
+  margin-bottom: clamp(var(--space-12), 5vw, var(--space-20));
+}
+
+/* Trust stats */
+.hero__trust {
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+  gap: 0;
+  border-block: 1px solid var(--line);
+  max-width: 760px;
+  margin-inline: auto;
+}
+.hero__trust-item {
+  flex: 1 1 0;
+  min-width: 180px;
+  padding: var(--space-6) var(--space-8);
+  border-right: 1px solid var(--line);
+}
+.hero__trust-item:last-child { border-right: none; }
+.hero__trust-number {
+  font-family: var(--font-display);
+  font-size: var(--text-xl);
+  font-weight: 700;
+  color: var(--navy);
+  line-height: 1;
+  margin-bottom: var(--space-2);
+}
+.hero__trust-label {
+  font-size: var(--text-xs);
+  color: var(--ink-faint);
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 0.06em;
+}
+@media (max-width: 620px) {
+  .hero__trust { flex-direction: column; }
+  .hero__trust-item { border-right: none; border-bottom: 1px solid var(--line); padding: var(--space-5); }
+  .hero__trust-item:last-child { border-bottom: none; }
+  .hero__buttons .btn { width: 100%; max-width: 340px; }
+}
+
+/* ============================================
+   ABOUT
+   ============================================ */
+.about {
+  background: var(--surface);
+  padding: clamp(var(--space-16), 8vw, var(--space-32)) 0;
+}
+.about__grid {
+  display: grid;
+  grid-template-columns: 0.9fr 1.25fr;
+  gap: clamp(var(--space-10), 5vw, var(--space-20));
+  align-items: center;
+}
+.about__photo-frame {
+  position: relative;
+  border-radius: var(--radius-xl);
+  overflow: hidden;
+  border: 1px solid var(--line);
+  box-shadow: var(--shadow-lg);
+  max-height: 540px;
+}
+.about__photo img {
+  width: 100%;
+  height: 100%;
+  max-height: 540px;
+  object-fit: cover;
+  object-position: center 20%;
+  display: block;
+}
+.about__text .badge { margin-bottom: var(--space-5); }
+.about__text h2 {
+  font-size: var(--text-2xl);
+  color: var(--ink);
+  margin-bottom: var(--space-6);
+}
+.about__text p {
+  color: var(--ink-soft);
+  margin-bottom: var(--space-5);
+  line-height: 1.75;
+}
+.about__pills {
+  display: flex;
+  flex-wrap: wrap;
+  gap: var(--space-3);
+  margin-top: var(--space-8);
+}
+.about__pill {
+  display: inline-flex;
+  align-items: center;
+  gap: var(--space-2);
+  padding: var(--space-2) var(--space-4);
+  background: var(--white);
+  border: 1px solid var(--line);
+  border-radius: var(--radius-full);
+  font-size: var(--text-xs);
+  font-weight: 600;
+  color: var(--navy);
+  box-shadow: var(--shadow-sm);
+}
+.about__pill svg { width: 14px; height: 14px; color: var(--terracotta); flex-shrink: 0; }
+
+@media (max-width: 820px) {
+  .about__grid { grid-template-columns: 1fr; }
+  .about__photo-frame { max-width: 380px; margin-inline: auto; max-height: 420px; }
+}
+
+/* ============================================
+   FEATURED QUOTE
+   ============================================ */
+.featured-quote {
+  background: var(--navy-deep);
+  padding: clamp(var(--space-16), 7vw, var(--space-24)) 0;
+  text-align: center;
+  position: relative;
+  overflow: hidden;
+}
+.featured-quote::before {
+  content: '';
+  position: absolute;
+  top: -50%; left: 50%;
+  transform: translateX(-50%);
+  width: 90%;
+  height: 120%;
+  background: radial-gradient(circle, rgba(60, 110, 165, 0.18) 0%, transparent 62%);
+  pointer-events: none;
+}
+.featured-quote__text {
+  font-family: var(--font-display);
+  font-style: italic;
+  font-weight: 400;
+  font-size: var(--text-xl);
+  color: #F4F7FA;
+  max-width: 800px;
+  margin-inline: auto;
+  line-height: 1.5;
+  margin-bottom: var(--space-8);
+  position: relative;
+}
+.featured-quote__text::before {
+  content: '\201C';
+  display: block;
+  font-size: clamp(3rem, 5vw, 4.5rem);
+  color: var(--terracotta-hover);
+  line-height: 0.5;
+  margin-bottom: var(--space-4);
+  font-style: normal;
+}
+.featured-quote__cite {
+  font-family: var(--font-body);
+  font-style: normal;
+  font-size: var(--text-sm);
+  color: rgba(244, 247, 250, 0.6);
+  font-weight: 500;
+  position: relative;
+}
+.featured-quote__cite strong { color: #F4F7FA; font-weight: 600; }
+
+/* ============================================
+   SERVICES
+   ============================================ */
+.services {
+  background: var(--white);
+  padding: clamp(var(--space-16), 8vw, var(--space-32)) 0;
+}
+.services__grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: var(--space-6);
+}
+.service-card {
+  background: var(--white);
+  border-radius: var(--radius-lg);
+  padding: var(--space-8);
+  border: 1px solid var(--line);
+  box-shadow: var(--shadow-sm);
+  position: relative;
+  overflow: hidden;
+  transition: transform var(--transition-interactive), box-shadow var(--transition-interactive), border-color var(--transition-interactive);
+}
+.service-card::before {
+  content: '';
+  position: absolute;
+  top: 0; left: 0; right: 0;
+  height: 3px;
+  background: var(--terracotta);
+  transform: scaleX(0);
+  transform-origin: left;
+  transition: transform 0.4s var(--ease-out);
+}
+.service-card:hover {
+  transform: translateY(-6px);
+  box-shadow: var(--shadow-lg);
+  border-color: rgba(15, 51, 87, 0.22);
+}
+.service-card:hover::before { transform: scaleX(1); }
+.service-card__icon {
+  width: 48px;
+  height: 48px;
+  border-radius: var(--radius-md);
+  background: var(--navy-tint);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-bottom: var(--space-5);
+}
+.service-card__icon svg { width: 24px; height: 24px; color: var(--navy); }
+.service-card h3 {
+  font-size: var(--text-base);
+  color: var(--ink);
+  margin-bottom: var(--space-3);
+  letter-spacing: -0.01em;
+}
+.service-card p {
+  font-size: var(--text-sm);
+  color: var(--ink-soft);
+  line-height: 1.6;
+}
+@media (max-width: 1024px) { .services__grid { grid-template-columns: repeat(2, 1fr); } }
+@media (max-width: 640px) { .services__grid { grid-template-columns: 1fr; } }
+
+/* ============================================
+   INDUSTRIES
+   ============================================ */
+.industries {
+  background: var(--surface);
+  padding: clamp(var(--space-16), 8vw, var(--space-32)) 0;
+}
+.industries__grid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: var(--space-5);
+}
+.industry-card {
+  background: var(--white);
+  border-radius: var(--radius-lg);
+  padding: var(--space-8) var(--space-6);
+  text-align: center;
+  border: 1px solid var(--line);
+  box-shadow: var(--shadow-sm);
+  transition: transform var(--transition-interactive), box-shadow var(--transition-interactive), border-color var(--transition-interactive);
+}
+.industry-card:hover { transform: translateY(-5px); box-shadow: var(--shadow-md); border-color: rgba(15, 51, 87, 0.2); }
+.industry-card__emoji {
+  width: 56px;
+  height: 56px;
+  border-radius: var(--radius-md);
+  background: var(--surface);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 1.5rem;
+  margin: 0 auto var(--space-4);
+}
+.industry-card h3 {
+  font-size: var(--text-sm);
+  color: var(--ink);
+  font-weight: 600;
+}
+@media (max-width: 1024px) { .industries__grid { grid-template-columns: repeat(2, 1fr); } }
+@media (max-width: 400px) { .industries__grid { grid-template-columns: 1fr; } }
+
+/* ============================================
+   TESTIMONIALS — auto-scrolling columns
+   ============================================ */
+.testimonials {
+  background: var(--white);
+  padding: clamp(var(--space-16), 8vw, var(--space-32)) 0;
+  position: relative;
+  overflow: hidden;
+}
+.testimonials__columns {
+  display: flex;
+  justify-content: center;
+  gap: var(--space-6);
+  max-height: 720px;
+  overflow: hidden;
+  mask-image: linear-gradient(to bottom, transparent, black 12%, black 88%, transparent);
+  -webkit-mask-image: linear-gradient(to bottom, transparent, black 12%, black 88%, transparent);
+}
+.t-col {
+  width: 340px;
+  max-width: 100%;
+  flex-shrink: 1;
+}
+.t-col ul {
+  list-style: none;
+  display: flex;
+  flex-direction: column;
+  animation: t-scroll var(--t-duration, 40s) linear infinite;
+  will-change: transform;
+}
+.t-col:hover ul { animation-play-state: paused; }
+@keyframes t-scroll {
+  to { transform: translateY(-50%); }
+}
+@media (prefers-reduced-motion: reduce) {
+  .t-col ul { animation: none; }
+  .testimonials__columns { max-height: none; mask-image: none; -webkit-mask-image: none; }
+  .t-col li[aria-hidden="true"] { display: none; }
+}
+
+.t-card {
+  background: var(--white);
+  border: 1px solid rgba(15, 27, 40, 0.1);
+  border-radius: var(--radius-xl);
+  padding: var(--space-8);
+  margin-bottom: var(--space-6);
+  box-shadow: 0 10px 15px -3px rgba(0,0,0,0.05), 0 4px 6px -4px rgba(0,0,0,0.04);
+  transition: transform 0.3s var(--ease-out), box-shadow 0.3s var(--ease-out);
+  cursor: default;
+}
+.t-card:hover {
+  transform: translateY(-8px) scale(1.02);
+  box-shadow: 0 25px 50px -12px rgba(0, 0, 0, 0.12), 0 10px 10px -5px rgba(0, 0, 0, 0.04);
+}
+.t-card p {
+  font-size: var(--text-sm);
+  color: var(--ink-soft);
+  line-height: 1.65;
+  margin-bottom: var(--space-6);
+}
+.t-card__author {
+  display: flex;
+  align-items: center;
+  gap: var(--space-3);
+}
+.t-card__avatar {
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  background: linear-gradient(135deg, var(--terracotta), #DD8A4E);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 0.75rem;
+  font-weight: 700;
+  color: white;
+  flex-shrink: 0;
+  box-shadow: inset 0 1px 0 rgba(255,255,255,0.15), 0 0 0 2px var(--surface);
+}
+.t-card__name {
+  font-weight: 600;
+  font-size: var(--text-sm);
+  color: var(--ink);
+  line-height: 1.3;
+}
+.t-card__role {
+  font-size: var(--text-xs);
+  color: var(--ink-faint);
+  line-height: 1.3;
+  margin-top: 2px;
+}
+
+.t-col--2, .t-col--3 { display: none; }
+@media (min-width: 768px) { .t-col--2 { display: block; } }
+@media (min-width: 1080px) { .t-col--3 { display: block; } }
+
+/* ============================================
+   CTA BAND
+   ============================================ */
+.cta-band {
+  background:
+    radial-gradient(ellipse 50% 60% at 88% 100%, rgba(192, 102, 43, 0.28), transparent),
+    linear-gradient(160deg, #0B2740, var(--navy) 55%, #1B4A75);
+  padding: clamp(var(--space-16), 6vw, var(--space-24)) 0;
+  text-align: center;
+  position: relative;
+  overflow: hidden;
+}
+.cta-band::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background-image: radial-gradient(rgba(255,255,255,0.1) 1px, transparent 1px);
+  background-size: 26px 26px;
+  mask-image: radial-gradient(ellipse at 50% 0%, black 0%, transparent 70%);
+  -webkit-mask-image: radial-gradient(ellipse at 50% 0%, black 0%, transparent 70%);
+  pointer-events: none;
+}
+.cta-band h2 {
+  font-size: var(--text-2xl);
+  color: white;
+  margin-bottom: var(--space-4);
+  position: relative;
+}
+.cta-band p {
+  color: rgba(255,255,255,0.82);
+  margin-bottom: var(--space-8);
+  margin-inline: auto;
+  max-width: 480px;
+  position: relative;
+}
+.cta-band .btn { position: relative; }
+
+/* ============================================
+   FAQ
+   ============================================ */
+.faq {
+  background: var(--surface);
+  padding: clamp(var(--space-16), 8vw, var(--space-32)) 0;
+}
+.faq__list {
+  max-width: var(--content-narrow);
+  margin-inline: auto;
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-4);
+}
+.faq-item {
+  background: var(--white);
+  border-radius: var(--radius-lg);
+  overflow: hidden;
+  border: 1px solid var(--line);
+  box-shadow: var(--shadow-sm);
+  transition: box-shadow var(--transition-interactive), border-color var(--transition-interactive);
+}
+.faq-item:hover { box-shadow: var(--shadow-md); }
+.faq-item.active { border-color: rgba(15, 51, 87, 0.3); }
+
+.faq-item__trigger {
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: var(--space-5) var(--space-6);
+  font-family: var(--font-body);
+  font-size: var(--text-base);
+  font-weight: 600;
+  color: var(--ink);
+  text-align: left;
+  cursor: pointer;
+  background: transparent;
+  border: none;
+  gap: var(--space-4);
+}
+.faq-item__icon {
+  width: 30px;
+  height: 30px;
+  border-radius: 50%;
+  background: var(--navy-tint);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+  transition: background 0.3s var(--ease-out), transform 0.3s var(--ease-out);
+}
+.faq-item__icon svg { width: 13px; height: 13px; color: var(--navy); }
+.faq-item.active .faq-item__icon {
+  background: var(--terracotta);
+  transform: rotate(45deg);
+}
+.faq-item.active .faq-item__icon svg { color: white; }
+
+.faq-item__content {
+  max-height: 0;
+  overflow: hidden;
+  transition: max-height 0.4s var(--ease-out);
+}
+.faq-item.active .faq-item__content { max-height: 400px; }
+.faq-item__answer {
+  padding: 0 var(--space-6) var(--space-6);
+  color: var(--ink-soft);
+  line-height: 1.7;
+  font-size: var(--text-sm);
+}
+
+/* ============================================
+   CONTACT
+   ============================================ */
+.contact {
+  background: var(--white);
+  padding: clamp(var(--space-16), 8vw, var(--space-32)) 0;
+}
+.contact__grid {
+  display: grid;
+  grid-template-columns: 1fr 1.2fr;
+  gap: clamp(var(--space-10), 5vw, var(--space-16));
+  align-items: start;
+}
+.contact__info .badge { margin-bottom: var(--space-5); }
+.contact__info h2 {
+  font-size: var(--text-2xl);
+  color: var(--ink);
+  margin-bottom: var(--space-5);
+}
+.contact__info > p {
+  color: var(--ink-soft);
+  margin-bottom: var(--space-8);
+  line-height: 1.7;
+}
+.contact__detail {
+  display: flex;
+  align-items: center;
+  gap: var(--space-3);
+  margin-bottom: var(--space-4);
+}
+.contact__detail svg { width: 20px; height: 20px; color: var(--navy); flex-shrink: 0; }
+.contact__detail a {
+  color: var(--ink);
+  text-decoration: none;
+  font-size: var(--text-sm);
+  font-weight: 500;
+}
+.contact__detail a:hover { color: var(--navy); }
+
+.contact__form {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-5);
+  background: var(--white);
+  border: 1px solid var(--line);
+  border-radius: var(--radius-xl);
+  padding: clamp(var(--space-6), 3vw, var(--space-10));
+  box-shadow: var(--shadow-lg);
+}
+.form-row {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: var(--space-5);
+}
+.form-group { display: flex; flex-direction: column; gap: var(--space-2); }
+.form-group label {
+  font-size: var(--text-xs);
+  font-weight: 600;
+  color: var(--ink-soft);
+  letter-spacing: 0.02em;
+}
+.form-group input,
+.form-group select,
+.form-group textarea {
+  padding: var(--space-3) var(--space-4);
+  background: var(--surface);
+  border: 1px solid rgba(15, 27, 40, 0.12);
+  border-radius: var(--radius-sm);
+  color: var(--ink);
+  font-size: var(--text-sm);
+  transition: border-color var(--transition-interactive), box-shadow var(--transition-interactive), background var(--transition-interactive);
+}
+.form-group input::placeholder,
+.form-group textarea::placeholder { color: var(--ink-faint); }
+.form-group input:focus,
+.form-group select:focus,
+.form-group textarea:focus {
+  outline: none;
+  background: var(--white);
+  border-color: var(--navy);
+  box-shadow: 0 0 0 3px rgba(15, 51, 87, 0.12);
+}
+.form-group select { appearance: none; background-image: url("data:image/svg+xml,%3Csvg width='12' height='8' viewBox='0 0 12 8' fill='none' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M1 1.5L6 6.5L11 1.5' stroke='%230F1B28' stroke-width='1.5' stroke-linecap='round' stroke-linejoin='round'/%3E%3C/svg%3E"); background-repeat: no-repeat; background-position: right 12px center; padding-right: 36px; }
+.form-group select option { background: var(--white); color: var(--ink); }
+.form-group textarea { resize: vertical; min-height: 120px; }
+
+.form-success {
+  display: none;
+  padding: var(--space-4);
+  background: var(--sage-tint);
+  border: 1px solid rgba(95, 115, 80, 0.3);
+  border-radius: var(--radius-sm);
+  color: var(--sage);
+  font-weight: 600;
+  text-align: center;
+  font-size: var(--text-sm);
+}
+.form-success.show { display: block; }
+
+@media (max-width: 820px) {
+  .contact__grid { grid-template-columns: 1fr; }
+  .form-row { grid-template-columns: 1fr; }
+}
+
+/* ============================================
+   FOOTER
+   ============================================ */
+.footer {
+  background: var(--navy-deep);
+  padding: var(--space-16) 0 var(--space-8);
+}
+.footer__grid {
+  display: grid;
+  grid-template-columns: 1.5fr 1fr 1fr;
+  gap: var(--space-12);
+  margin-bottom: var(--space-12);
+}
+.footer__logo {
+  font-family: var(--font-display);
+  font-size: var(--text-lg);
+  font-weight: 700;
+  color: white;
+  text-decoration: none;
+}
+.footer__logo span { color: #E0A374; font-style: italic; }
+.footer__brand p {
+  color: rgba(244, 247, 250, 0.55);
+  font-size: var(--text-sm);
+  line-height: 1.7;
+  margin-top: var(--space-4);
+  max-width: 320px;
+}
+.footer h4 {
+  font-size: var(--text-sm);
+  font-weight: 600;
+  color: white;
+  margin-bottom: var(--space-5);
+  text-transform: uppercase;
+  letter-spacing: 0.06em;
+}
+.footer__links {
+  list-style: none;
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-3);
+}
+.footer__links a {
+  color: rgba(244, 247, 250, 0.55);
+  text-decoration: none;
+  font-size: var(--text-sm);
+}
+.footer__links a:hover { color: white; }
+
+.footer__bottom {
+  border-top: 1px solid rgba(255,255,255,0.1);
+  padding-top: var(--space-8);
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+.footer__bottom p {
+  font-size: var(--text-xs);
+  color: rgba(244, 247, 250, 0.4);
+}
+.footer__social a {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 36px;
+  height: 36px;
+  border-radius: var(--radius-sm);
+  background: rgba(255,255,255,0.08);
+  color: rgba(244, 247, 250, 0.6);
+  transition: background var(--transition-interactive), color var(--transition-interactive);
+}
+.footer__social a:hover { background: var(--terracotta); color: white; }
+.footer__social a svg { width: 18px; height: 18px; }
+
+@media (max-width: 768px) {
+  .footer__grid { grid-template-columns: 1fr; gap: var(--space-8); }
+  .footer__bottom { flex-direction: column; gap: var(--space-4); text-align: center; }
+}
+</style>
+</head>
+<body>
+
+<!-- ========== HEADER ========== -->
+<header class="header" id="header">
+  <div class="container header__inner">
+    <a href="#" class="header__logo">Consulting <span>Alice</span></a>
+    <nav class="header__nav" aria-label="Primary">
+      <a href="#about">About</a>
+      <a href="#services">Services</a>
+      <a href="#industries">Industries</a>
+      <a href="#testimonials">Testimonials</a>
+      <a href="#faq">FAQ</a>
+      <a href="#contact">Contact</a>
+    </nav>
+    <div class="header__cta">
+      <a href="#contact" class="btn btn--primary">Book a Consultation</a>
+    </div>
+  </div>
+  <div class="subnav" aria-label="Sections">
+    <div class="container subnav__inner">
+      <a href="#about">About</a>
+      <a href="#services">Services</a>
+      <a href="#industries">Industries</a>
+      <a href="#testimonials">Testimonials</a>
+      <a href="#faq">FAQ</a>
+      <a href="#contact">Contact</a>
+    </div>
+  </div>
+</header>
+
+<!-- ========== HERO ========== -->
+<section class="hero" id="hero">
+  <div class="container">
+    <div class="hero__content">
+      <div class="badge reveal">Strategic HR Consulting</div>
+      <h1 class="reveal reveal-delay-1">Your people deserve a <em>strategic partner</em> who truly gets it</h1>
+      <p class="hero__subtitle reveal reveal-delay-2">Warm, practical HR guidance for leaders who care about their teams and their bottom line. From compliance to culture, I help growing businesses build people strategies that actually work.</p>
+      <div class="hero__buttons reveal reveal-delay-3">
+        <a href="#contact" class="btn btn--primary">Book a Consultation</a>
+        <a href="#services" class="btn btn--outline">Explore Services</a>
+      </div>
+      <div class="hero__trust reveal reveal-delay-4">
+        <div class="hero__trust-item">
+          <div class="hero__trust-number">9+</div>
+          <div class="hero__trust-label">Years in HR</div>
+        </div>
+        <div class="hero__trust-item">
+          <div class="hero__trust-number">3,400+</div>
+          <div class="hero__trust-label">Employees Supported</div>
+        </div>
+        <div class="hero__trust-item">
+          <div class="hero__trust-number">47+</div>
+          <div class="hero__trust-label">Warehouse Locations</div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ========== ABOUT ========== -->
+<section class="about" id="about">
+  <div class="container">
+    <div class="about__grid">
+      <div class="about__photo reveal">
+        <div class="about__photo-frame">
+          <img src="headshot.jpg" alt="Alice Yanello — HR Consultant" loading="lazy">
+        </div>
+      </div>
+      <div class="about__text">
+        <div class="badge reveal">About Alice</div>
+        <h2 class="reveal reveal-delay-1">HR leadership that feels like a partnership, not a policy manual</h2>
+        <p class="reveal reveal-delay-2">With over 9 years of progressive HR experience, I've led people strategy at organizations ranging from high-growth startups to enterprise operations. My career includes impactful roles at Amazon, Safelite AutoGlass, and Express Employment Professionals, where I honed my ability to balance business objectives with genuine care for employees.</p>
+        <p class="reveal reveal-delay-3">I founded Consulting Alice to bring that same strategic, people-first approach to growing businesses that need HR leadership or a strategic business/workforce partner without the full-time overhead. Whether you're navigating complex compliance challenges, building performance frameworks, or transforming your company culture, I bring warmth, clarity, and real-world expertise to every engagement.</p>
+        <div class="about__pills reveal reveal-delay-4">
+          <span class="about__pill"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg>Strategic &amp; Data-Driven</span>
+          <span class="about__pill"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg>People First</span>
+          <span class="about__pill"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg>Compliance Confident</span>
+          <span class="about__pill"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg>Organizational Growth</span>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ========== FEATURED QUOTE ========== -->
+<section class="featured-quote">
+  <div class="container">
+    <blockquote class="reveal">
+      <p class="featured-quote__text">Alice consistently excelled as a trusted advisor and sought-after partner for leadership guidance and strategic solutions.</p>
+      <cite class="featured-quote__cite"><strong>Peter Fehring</strong> — Head of People at Throne</cite>
+    </blockquote>
+  </div>
+</section>
+
+<!-- ========== SERVICES ========== -->
+<section class="services" id="services">
+  <div class="container">
+    <div class="section-head">
+      <div class="badge reveal">What I Do</div>
+      <h2 class="reveal reveal-delay-1">Strategic HR services tailored to your business</h2>
+      <p class="reveal reveal-delay-2">From foundational compliance to forward-thinking people strategy, every engagement is customized to where you are — and where you want to go.</p>
+    </div>
+
+    <div class="services__grid">
+      <!-- Card 1 -->
+      <div class="service-card reveal reveal-delay-1">
+        <div class="service-card__icon">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M2 3h6a4 4 0 0 1 4 4v14a3 3 0 0 0-3-3H2z"/><path d="M22 3h-6a4 4 0 0 0-4 4v14a3 3 0 0 1 3-3h7z"/></svg>
+        </div>
+        <h3>Strategic HR Planning</h3>
+        <p>Align your people strategy with business goals through workforce planning, organizational design, and data-driven decision making.</p>
+      </div>
+      <!-- Card 2 -->
+      <div class="service-card reveal reveal-delay-2">
+        <div class="service-card__icon">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><rect x="4" y="4" width="16" height="16" rx="2"/><path d="M9 9h6v6H9z"/><path d="M9 1v3M15 1v3M9 20v3M15 20v3M1 9h3M1 15h3M20 9h3M20 15h3"/></svg>
+        </div>
+        <h3>AI &amp; Systems Integration</h3>
+        <p>Leverage AI tools and modern HR systems to automate workflows, improve analytics, and make smarter people decisions faster.</p>
+      </div>
+      <!-- Card 3 -->
+      <div class="service-card reveal reveal-delay-3">
+        <div class="service-card__icon">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/><polyline points="14 2 14 8 20 8"/><line x1="16" y1="13" x2="8" y2="13"/><line x1="16" y1="17" x2="8" y2="17"/><polyline points="10 9 9 9 8 9"/></svg>
+        </div>
+        <h3>Policies &amp; Handbooks</h3>
+        <p>Create clear, compliant, and human-friendly employee handbooks and HR policies tailored to your culture and jurisdiction.</p>
+      </div>
+      <!-- Card 4 -->
+      <div class="service-card reveal reveal-delay-4">
+        <div class="service-card__icon">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M12 20V10"/><path d="M18 20V4"/><path d="M6 20v-4"/></svg>
+        </div>
+        <h3>Performance Management</h3>
+        <p>Design review cycles, goal frameworks, and feedback systems that drive accountability and growth — not just annual check-the-box exercises.</p>
+      </div>
+      <!-- Card 5 -->
+      <div class="service-card reveal reveal-delay-5">
+        <div class="service-card__icon">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M23 21v-2a4 4 0 0 0-3-3.87"/><path d="M16 3.13a4 4 0 0 1 0 7.75"/></svg>
+        </div>
+        <h3>Employee Relations</h3>
+        <p>Navigate sensitive workplace situations with confidence — investigations, conflict resolution, and culture-building that protects your people and your business.</p>
+      </div>
+      <!-- Card 6 -->
+      <div class="service-card reveal reveal-delay-6">
+        <div class="service-card__icon">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg>
+        </div>
+        <h3>Compliance &amp; Risk</h3>
+        <p>Stay ahead of federal, state, and local employment regulations with proactive audits, risk assessments, and ongoing compliance support.</p>
+      </div>
+      <!-- Card 7 -->
+      <div class="service-card reveal reveal-delay-1">
+        <div class="service-card__icon">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="4" width="18" height="18" rx="2" ry="2"/><line x1="16" y1="2" x2="16" y2="6"/><line x1="8" y1="2" x2="8" y2="6"/><line x1="3" y1="10" x2="21" y2="10"/></svg>
+        </div>
+        <h3>Leave &amp; Accommodations</h3>
+        <p>Manage FMLA, ADA, and state-specific leave programs with clarity and compassion, ensuring compliance while supporting your employees.</p>
+      </div>
+      <!-- Card 8 -->
+      <div class="service-card reveal reveal-delay-2">
+        <div class="service-card__icon">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="8" r="5"/><path d="M20 21a8 8 0 0 0-16 0"/><path d="M12 13l3 3-3 3"/></svg>
+        </div>
+        <h3>Talent Management</h3>
+        <p>Attract, develop, and retain top talent with strategic recruiting, onboarding programs, succession planning, and career pathways.</p>
+      </div>
+      <!-- Card 9 -->
+      <div class="service-card reveal reveal-delay-3">
+        <div class="service-card__icon">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="3" width="20" height="14" rx="2" ry="2"/><line x1="8" y1="21" x2="16" y2="21"/><line x1="12" y1="17" x2="12" y2="21"/></svg>
+        </div>
+        <h3>HR Tech Implementation</h3>
+        <p>Select, implement, and optimize HRIS platforms and people tools that streamline operations and provide actionable workforce insights.</p>
+      </div>
+      <!-- Card 10 -->
+      <div class="service-card reveal reveal-delay-4">
+        <div class="service-card__icon">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M16 21v-2a4 4 0 0 0-4-4H6a4 4 0 0 0-4 4v2"/><circle cx="9" cy="7" r="4"/><line x1="19" y1="8" x2="19" y2="14"/><line x1="22" y1="11" x2="16" y2="11"/></svg>
+        </div>
+        <h3>Workforce Hiring Strategies</h3>
+        <p>Develop targeted recruitment approaches that attract the right talent — from sourcing pipelines and employer branding to interview frameworks and offer strategies.</p>
+      </div>
+      <!-- Card 11 -->
+      <div class="service-card reveal reveal-delay-5">
+        <div class="service-card__icon">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M12 2L2 7l10 5 10-5-10-5z"/><path d="M2 17l10 5 10-5"/><path d="M2 12l10 5 10-5"/></svg>
+        </div>
+        <h3>Leadership Development &amp; Coaching</h3>
+        <p>Grow confident, capable leaders at every level through executive coaching, management training, and customized development programs that drive results.</p>
+      </div>
+      <!-- Card 12 -->
+      <div class="service-card reveal reveal-delay-6">
+        <div class="service-card__icon">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M21.5 2v6h-6M2.5 22v-6h6"/><path d="M2.5 16C3.93 11.82 7.73 9 12 9c4.28 0 7.47 2.08 9.5 7"/><path d="M21.5 8c-1.43 4.18-5.23 7-9.5 7-4.28 0-7.47-2.08-9.5-7"/></svg>
+        </div>
+        <h3>Change Management</h3>
+        <p>Guide your organization through transitions with structured change frameworks, stakeholder alignment, communication plans, and adoption strategies that minimize disruption.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ========== INDUSTRIES ========== -->
+<section class="industries" id="industries">
+  <div class="container">
+    <div class="section-head">
+      <div class="badge reveal">Industries Served</div>
+      <h2 class="reveal reveal-delay-1">Expertise across diverse sectors</h2>
+      <p class="reveal reveal-delay-2">Every industry has unique people challenges. I bring cross-sector experience that adapts proven frameworks to your specific reality.</p>
+    </div>
+
+    <div class="industries__grid">
+      <div class="industry-card reveal reveal-delay-1">
+        <div class="industry-card__emoji">🏢</div>
+        <h3>Professional Services</h3>
+      </div>
+      <div class="industry-card reveal reveal-delay-2">
+        <div class="industry-card__emoji">🚚</div>
+        <h3>Logistics &amp; Supply Chain</h3>
+      </div>
+      <div class="industry-card reveal reveal-delay-3">
+        <div class="industry-card__emoji">🛠️</div>
+        <h3>Field Services</h3>
+      </div>
+      <div class="industry-card reveal reveal-delay-4">
+        <div class="industry-card__emoji">🛍️</div>
+        <h3>Retail &amp; Hospitality</h3>
+      </div>
+      <div class="industry-card reveal reveal-delay-5">
+        <div class="industry-card__emoji">💻</div>
+        <h3>Technology &amp; Startups</h3>
+      </div>
+      <div class="industry-card reveal reveal-delay-6">
+        <div class="industry-card__emoji">🤝</div>
+        <h3>Nonprofits</h3>
+      </div>
+      <div class="industry-card reveal reveal-delay-7">
+        <div class="industry-card__emoji">🏥</div>
+        <h3>Healthcare</h3>
+      </div>
+      <div class="industry-card reveal reveal-delay-8">
+        <div class="industry-card__emoji">🏭</div>
+        <h3>Manufacturing</h3>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ========== TESTIMONIALS ========== -->
+<section class="testimonials" id="testimonials">
+  <div class="container">
+    <div class="section-head">
+      <div class="badge reveal">Testimonials</div>
+      <h2 class="reveal reveal-delay-1">What leaders say about working with Alice</h2>
+      <p class="reveal reveal-delay-2">Colleagues and clients from Amazon, Safelite, Express Employment, and beyond.</p>
+    </div>
+
+    <div class="testimonials__columns reveal" role="region" aria-label="Scrolling testimonials">
+
+      <!-- Column 1 -->
+      <div class="t-col t-col--1" style="--t-duration: 42s;">
+        <ul></ul>
+      </div>
+
+      <!-- Column 2 -->
+      <div class="t-col t-col--2" style="--t-duration: 54s;">
+        <ul></ul>
+      </div>
+
+      <!-- Column 3 -->
+      <div class="t-col t-col--3" style="--t-duration: 48s;">
+        <ul></ul>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+<!-- ========== CTA BAND ========== -->
+<section class="cta-band">
+  <div class="container">
+    <h2 class="reveal">Ready to transform your people strategy?</h2>
+    <p class="reveal reveal-delay-1">Let's talk about what's possible for your team. The first consultation is free and commitment-free.</p>
+    <a href="#contact" class="btn btn--accent reveal reveal-delay-2">Book Your Free Consultation</a>
+  </div>
+</section>
+
+<!-- ========== FAQ ========== -->
+<section class="faq" id="faq">
+  <div class="container">
+    <div class="section-head">
+      <div class="badge reveal">FAQ</div>
+      <h2 class="reveal reveal-delay-1">Common questions, honest answers</h2>
+      <p class="reveal reveal-delay-2">Everything you need to know before we start working together.</p>
+    </div>
+
+    <div class="faq__list">
+
+      <div class="faq-item reveal reveal-delay-1">
+        <button class="faq-item__trigger" aria-expanded="false">
+          <span>What types of businesses do you work with?</span>
+          <div class="faq-item__icon"><svg viewBox="0 0 14 14" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><line x1="7" y1="1" x2="7" y2="13"/><line x1="1" y1="7" x2="13" y2="7"/></svg></div>
+        </button>
+        <div class="faq-item__content">
+          <p class="faq-item__answer">I work with growing businesses across a wide range of industries — from tech startups and professional services firms to logistics companies and nonprofits. My sweet spot is organizations with 20 to 500 employees who need senior HR expertise but aren't ready for a full-time hire.</p>
+        </div>
+      </div>
+
+      <div class="faq-item reveal reveal-delay-2">
+        <button class="faq-item__trigger" aria-expanded="false">
+          <span>What's the difference between fractional and traditional consulting?</span>
+          <div class="faq-item__icon"><svg viewBox="0 0 14 14" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><line x1="7" y1="1" x2="7" y2="13"/><line x1="1" y1="7" x2="13" y2="7"/></svg></div>
+        </button>
+        <div class="faq-item__content">
+          <p class="faq-item__answer">As a fractional HR partner, I embed within your team on an ongoing basis — attending meetings, advising leadership, and owning HR projects — rather than delivering a one-time report and walking away. You get the strategic depth of a senior HR leader at a fraction of the cost of a full-time executive.</p>
+        </div>
+      </div>
+
+      <div class="faq-item reveal reveal-delay-3">
+        <button class="faq-item__trigger" aria-expanded="false">
+          <span>Can you handle sensitive employee issues?</span>
+          <div class="faq-item__icon"><svg viewBox="0 0 14 14" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><line x1="7" y1="1" x2="7" y2="13"/><line x1="1" y1="7" x2="13" y2="7"/></svg></div>
+        </button>
+        <div class="faq-item__content">
+          <p class="faq-item__answer">Absolutely. I have extensive experience managing workplace investigations, employee relations issues, terminations, and sensitive accommodations. Discretion, empathy, and legal compliance are at the core of every engagement. You'll never feel alone navigating difficult conversations.</p>
+        </div>
+      </div>
+
+      <div class="faq-item reveal reveal-delay-4">
+        <button class="faq-item__trigger" aria-expanded="false">
+          <span>Do you work with companies outside your state?</span>
+          <div class="faq-item__icon"><svg viewBox="0 0 14 14" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><line x1="7" y1="1" x2="7" y2="13"/><line x1="1" y1="7" x2="13" y2="7"/></svg></div>
+        </button>
+        <div class="faq-item__content">
+          <p class="faq-item__answer">Yes! I work with companies across the U.S. and have experience navigating multi-state compliance. Most of my engagements are conducted remotely with regular virtual meetings, though I'm available for on-site visits when needed for key initiatives or sensitive situations.</p>
+        </div>
+      </div>
+
+      <div class="faq-item reveal reveal-delay-5">
+        <button class="faq-item__trigger" aria-expanded="false">
+          <span>What does the initial consultation look like?</span>
+          <div class="faq-item__icon"><svg viewBox="0 0 14 14" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><line x1="7" y1="1" x2="7" y2="13"/><line x1="1" y1="7" x2="13" y2="7"/></svg></div>
+        </button>
+        <div class="faq-item__content">
+          <p class="faq-item__answer">The first consultation is a free, 30-minute conversation where we discuss your current HR challenges, goals, and team structure. I'll share initial observations and outline how I might help. There's absolutely no pressure — it's about determining if we're a good fit for each other.</p>
+        </div>
+      </div>
+
+      <div class="faq-item reveal reveal-delay-6">
+        <button class="faq-item__trigger" aria-expanded="false">
+          <span>How does pricing work?</span>
+          <div class="faq-item__icon"><svg viewBox="0 0 14 14" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><line x1="7" y1="1" x2="7" y2="13"/><line x1="1" y1="7" x2="13" y2="7"/></svg></div>
+        </button>
+        <div class="faq-item__content">
+          <p class="faq-item__answer">Pricing depends on scope and engagement type. I offer monthly retainers for ongoing fractional HR work, project-based pricing for defined initiatives like handbook creation or compliance audits, and hourly consulting for advisory needs. We'll determine the best fit during our initial conversation.</p>
+        </div>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+<!-- ========== CONTACT ========== -->
+<section class="contact" id="contact">
+  <div class="container">
+    <div class="contact__grid">
+      <div class="contact__info">
+        <div class="badge reveal">Get in Touch</div>
+        <h2 class="reveal reveal-delay-1">Let's build something great for your people</h2>
+        <p class="reveal reveal-delay-2">Whether you have a specific challenge in mind or just want to explore what fractional HR support could look like, I'd love to hear from you.</p>
+        <div class="contact__detail reveal reveal-delay-3">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/><polyline points="22,6 12,13 2,6"/></svg>
+          <a href="mailto:ConsultingAlice@outlook.com">ConsultingAlice@outlook.com</a>
+        </div>
+        <div class="contact__detail">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"/></svg>
+          <a href="tel:815-325-8483">815-325-8483</a>
+        </div>
+        <div class="contact__detail reveal reveal-delay-4">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-2-2 2 2 0 0 0-2 2v7h-4v-7a6 6 0 0 1 6-6z"/><rect x="2" y="9" width="4" height="12"/><circle cx="4" cy="4" r="2"/></svg>
+          <a href="https://linkedin.com" target="_blank" rel="noopener noreferrer">Connect on LinkedIn</a>
+        </div>
+      </div>
+
+      <form class="contact__form reveal" id="contactForm">
+        <div class="form-row">
+          <div class="form-group">
+            <label for="name">Full Name</label>
+            <input type="text" id="name" name="name" placeholder="Jane Smith" required>
+          </div>
+          <div class="form-group">
+            <label for="email">Email</label>
+            <input type="email" id="email" name="email" placeholder="jane@company.com" required>
+          </div>
+        </div>
+        <div class="form-row">
+          <div class="form-group">
+            <label for="company">Company</label>
+            <input type="text" id="company" name="company" placeholder="Acme Inc.">
+          </div>
+          <div class="form-group">
+            <label for="employees">Number of Employees</label>
+            <select id="employees" name="employees">
+              <option value="" disabled selected>Select range</option>
+              <option value="1-20">1 – 20</option>
+              <option value="21-50">21 – 50</option>
+              <option value="51-100">51 – 100</option>
+              <option value="101-250">101 – 250</option>
+              <option value="251-500">251 – 500</option>
+              <option value="500+">500+</option>
+            </select>
+          </div>
+        </div>
+        <div class="form-group">
+          <label for="service">Service Interested In</label>
+          <select id="service" name="service">
+            <option value="" disabled selected>Select a service</option>
+            <option value="strategic-hr">Strategic HR Planning</option>
+            <option value="ai-systems">AI &amp; Systems Integration</option>
+            <option value="policies">Policies &amp; Handbooks</option>
+            <option value="performance">Performance Management</option>
+            <option value="employee-relations">Employee Relations</option>
+            <option value="compliance">Compliance &amp; Risk</option>
+            <option value="leave">Leave &amp; Accommodations</option>
+            <option value="talent">Talent Management</option>
+            <option value="hr-tech">HR Tech Implementation</option>
+            <option value="hiring-strategies">Workforce Hiring Strategies</option>
+            <option value="leadership-coaching">Leadership Development &amp; Coaching</option>
+            <option value="change-management">Change Management</option>
+            <option value="other">Other / Not Sure</option>
+          </select>
+        </div>
+        <div class="form-group">
+          <label for="message">Message</label>
+          <textarea id="message" name="message" placeholder="Tell me about your situation and how I can help…" rows="5"></textarea>
+        </div>
+        <button type="submit" class="btn btn--primary" style="align-self: flex-start;">Send Message</button>
+        <div class="form-success" id="formSuccess">Message Sent ✓</div>
+      </form>
+    </div>
+  </div>
+</section>
+
+<!-- ========== FOOTER ========== -->
+<footer class="footer">
+  <div class="container">
+    <div class="footer__grid">
+      <div class="footer__brand">
+        <a href="#" class="footer__logo">Consulting <span>Alice</span></a>
+        <p>Strategic HR consulting for growing businesses. Warm, practical guidance that balances your people and your bottom line.</p>
+      </div>
+      <div>
+        <h4>Navigate</h4>
+        <ul class="footer__links" role="list">
+          <li><a href="#about">About</a></li>
+          <li><a href="#services">Services</a></li>
+          <li><a href="#industries">Industries</a></li>
+          <li><a href="#testimonials">Testimonials</a></li>
+          <li><a href="#contact">Contact</a></li>
+        </ul>
+      </div>
+      <div>
+        <h4>Resources</h4>
+        <ul class="footer__links" role="list">
+          <li><a href="#faq">FAQ</a></li>
+          <li><a href="mailto:ConsultingAlice@outlook.com">Email Alice</a></li>
+          <li><a href="https://linkedin.com" target="_blank" rel="noopener noreferrer">LinkedIn</a></li>
+        </ul>
+      </div>
+    </div>
+    <div class="footer__bottom">
+      <p>&copy; 2026 Consulting Alice. All rights reserved.</p>
+      <div class="footer__social">
+        <a href="https://linkedin.com" target="_blank" rel="noopener noreferrer" aria-label="LinkedIn">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-2-2 2 2 0 0 0-2 2v7h-4v-7a6 6 0 0 1 6-6z"/><rect x="2" y="9" width="4" height="12"/><circle cx="4" cy="4" r="2"/></svg>
+        </a>
+      </div>
+    </div>
+  </div>
+</footer>
+
+<!-- ========== JAVASCRIPT ========== -->
+<script>
+(function() {
+  'use strict';
+
+  // --- TESTIMONIAL DATA ---
+  var testimonials = [
+    { initials: 'PF', name: 'Peter Fehring', role: 'Head of People at Throne', text: "Alice and I worked closely at Amazon, tackling complex challenges. Her deep passion for the employee experience, strategic insight, and remarkable ability to guide the organization were evident in every project. I cannot recommend her highly enough." },
+    { initials: 'SM', name: 'Sara Moriarty-Delafuente', role: 'Owner, Express Employment', text: "She demonstrated remarkable adaptability and exceptional ability to build strong relationships. Alice is a strategic thinker who excels in developing HR strategies that align with organizational goals. Her relatability and sense of humor are standout qualities." },
+    { initials: 'BE', name: 'Brad Ellington', role: 'Director, Fulfillment Operations', text: "A consummate professional who understands how to improve operations and meet KPI goals while maintaining a positive culture. Her people-first approach builds confidence with everyone." },
+    { initials: 'AW', name: 'Amanda Wehner', role: 'HR Business Partner & Coach', text: "A strong collaborative partner with strengths in making data-led decisions and leveraging insights to influence the business." },
+    { initials: 'ML', name: 'Melanie Liu, NBC-HWC', role: 'HR Professional & Health Coach', text: "Her extensive knowledge of HR policies and ability to communicate with managers and employees fostered a positive work environment. She goes above and beyond." },
+    { initials: 'JH', name: 'Jen Helmstaedter', role: 'Manager of Operations', text: "She was my constant partner and biggest help. HR issues can be a nightmare, but not with Alice's guidance. She's the best!" },
+    { initials: 'SW', name: 'Scott Worley', role: 'Director of Operations', text: "She makes her clients a priority and gives sound advice that supports associates and the business." },
+    { initials: 'FC', name: 'Firdaous Chekroun', role: 'HR Business Partner, Zumiez', text: "One of those peers you never forget. Laser focused, determined, and consistently provided insightful guidance that influenced my decision-making." },
+    { initials: 'SF', name: 'Samantha Ferry', role: 'Market Supply Chain Manager', text: "With hundreds of employees to assist, Alice was never late on a response and always gave helpful answers. Her direction made me a better manager." },
+    { initials: 'AC', name: 'Asha Cain, SHRM-SCP', role: 'Director of People, Safelite', text: "A trusted advisor focused on solutions that balance associates and the business. An asset to any organization." },
+    { initials: 'JF', name: 'Joel Farmer', role: 'Strategic Operations Leader', text: "One of the best HR representatives I've worked with. Handles every situation with professionalism and kindness." },
+    { initials: 'BP', name: 'Brandy Phelps', role: 'Sr. Program Director, People2.0', text: "Extremely thorough, detailed, driven and instrumental to our team's success." },
+    { initials: 'DC', name: 'Dylan Cowdery', role: 'District Manager, Safelite', text: "Collaborative and a problem solver." },
+    { initials: 'SR', name: 'Sandra Roberts', role: 'Program Manager, TAPFIN', text: "One of the most professional, proactive and responsive people I've worked with. Always followed through with frequent updates." }
+  ];
+
+  // Split into 3 columns and render each list twice for a seamless loop
+  var columns = [
+    testimonials.slice(0, 5),
+    testimonials.slice(5, 10),
+    testimonials.slice(10, 14)
+  ];
+
+  function cardHTML(t) {
+    return '<li class="t-card"><p>' + t.text + '</p>' +
+      '<div class="t-card__author">' +
+      '<div class="t-card__avatar" aria-hidden="true">' + t.initials + '</div>' +
+      '<div><div class="t-card__name">' + t.name + '</div>' +
+      '<div class="t-card__role">' + t.role + '</div></div></div></li>';
+  }
+
+  document.querySelectorAll('.t-col').forEach(function(col, i) {
+    var items = columns[i] || [];
+    var half = items.map(cardHTML).join('');
+    var ul = col.querySelector('ul');
+    ul.innerHTML = half + half;
+    // Mark the duplicated second half as decorative
+    Array.prototype.slice.call(ul.children, items.length).forEach(function(li) {
+      li.setAttribute('aria-hidden', 'true');
+    });
+  });
+
+  // --- HEADER SCROLL ---
+  var header = document.getElementById('header');
+  function handleScroll() {
+    if (window.scrollY > 10) {
+      header.classList.add('scrolled');
+    } else {
+      header.classList.remove('scrolled');
+    }
+  }
+  window.addEventListener('scroll', handleScroll, { passive: true });
+
+  // --- SCROLL REVEAL ---
+  var revealElements = document.querySelectorAll('.reveal');
+  var observer = new IntersectionObserver(function(entries) {
+    entries.forEach(function(entry) {
+      if (entry.isIntersecting) {
+        entry.target.classList.add('visible');
+        observer.unobserve(entry.target);
+      }
+    });
+  }, {
+    threshold: 0.1,
+    rootMargin: '0px 0px -40px 0px'
+  });
+
+  revealElements.forEach(function(el) {
+    observer.observe(el);
+  });
+
+  // --- FAQ ACCORDION ---
+  var faqItems = document.querySelectorAll('.faq-item');
+  faqItems.forEach(function(item) {
+    var trigger = item.querySelector('.faq-item__trigger');
+    trigger.addEventListener('click', function() {
+      var isActive = item.classList.contains('active');
+
+      faqItems.forEach(function(other) {
+        other.classList.remove('active');
+        other.querySelector('.faq-item__trigger').setAttribute('aria-expanded', 'false');
+      });
+
+      if (!isActive) {
+        item.classList.add('active');
+        trigger.setAttribute('aria-expanded', 'true');
+      }
+    });
+  });
+
+  // --- SMOOTH SCROLL ---
+  document.querySelectorAll('a[href^="#"]').forEach(function(anchor) {
+    anchor.addEventListener('click', function(e) {
+      var targetId = this.getAttribute('href');
+      if (targetId === '#') return;
+      var target = document.querySelector(targetId);
+      if (target) {
+        e.preventDefault();
+        target.scrollIntoView({ behavior: 'smooth', block: 'start' });
+      }
+    });
+  });
+
+  // --- FORM SUBMIT ---
+  var form = document.getElementById('contactForm');
+  var success = document.getElementById('formSuccess');
+
+  form.addEventListener('submit', function(e) {
+    e.preventDefault();
+    success.classList.add('show');
+    form.reset();
+    setTimeout(function() {
+      success.classList.remove('show');
+    }, 3000);
+  });
+
+})();
+</script>
+</body>
+</html>
